@@ -1,0 +1,256 @@
+/* Navigation Styles */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.main-nav.scrolled {
+    padding: 12px 0;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    transform-origin: left center;
+}
+
+.nav-logo:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 20px;
+    height: 1px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover::after {
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--heading-color);
+}
+
+.nav-links a:hover::before, .nav-links a.active::before {
+    width: 100%;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--heading-color);
+    transform: scale(1.1);
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 5px;
+    position: relative;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    color: var(--heading-color);
+}
+
+.mobile-nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.4s ease;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav-menu.active {
+    right: 0;
+}
+
+.mobile-nav-menu a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.mobile-nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background: var(--accent-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-menu a:hover {
+    color: var(--heading-color);
+    padding-left: 10px;
+}
+
+.mobile-nav-menu a:hover::before {
+    opacity: 1;
+}
+
+.nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animated underline that looks like a racing line */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Adding racing-inspired corner accent */
+.nav-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: var(--accent-color);
+}
+
+.nav-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 30px;
+    background: var(--accent-color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-nav-toggle {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    
+    .mobile-nav-menu {
+        padding: 70px 30px;
+    }
+} 

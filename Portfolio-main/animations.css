@@ -1,0 +1,482 @@
+/* Animations and Transitions */
+
+/* Basic Fade In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide In Animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scale Animations */
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleOut {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Racing Line Animation */
+@keyframes racingLine {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Reflection Animation */
+@keyframes reflection {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Racing Flash Animation */
+@keyframes racingFlash {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    30% {
+        opacity: 0.8;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Racing Pulse Animation */
+@keyframes racingPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0);
+    }
+}
+
+/* Skill Bar Animation */
+@keyframes skillProgress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--progress);
+    }
+}
+
+/* Racing Number Counter Animation */
+@keyframes countUp {
+    0% {
+        content: "0";
+    }
+    100% {
+        content: attr(data-count);
+    }
+}
+
+/* Racing Grid Animation */
+@keyframes racingGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Racing Border Animation */
+@keyframes racingBorder {
+    0% {
+        border-color: var(--accent-color);
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        border-color: var(--accent-color);
+    }
+}
+
+/* Typewriter Animation */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-right-color: transparent;
+    }
+    to {
+        border-right-color: var(--accent-color);
+    }
+}
+
+/* Racing Shape Rotate */
+@keyframes shapeRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Racing Shape Move */
+@keyframes shapeMove {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(20px) translateY(-20px);
+    }
+    50% {
+        transform: translateX(0) translateY(0);
+    }
+    75% {
+        transform: translateX(-20px) translateY(20px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Utility Animation Classes */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.slide-left {
+    animation: slideInLeft 0.8s ease forwards;
+    opacity: 0;
+}
+
+.slide-right {
+    animation: slideInRight 0.8s ease forwards;
+    opacity: 0;
+}
+
+.slide-up {
+    animation: slideInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.slide-down {
+    animation: slideInDown 0.8s ease forwards;
+    opacity: 0;
+}
+
+.scale-in {
+    animation: scaleIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.scale-out {
+    animation: scaleOut 0.8s ease forwards;
+    opacity: 0;
+}
+
+.racing-flash {
+    position: relative;
+}
+
+.racing-flash::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    opacity: 0;
+    animation: racingFlash 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.racing-pulse {
+    animation: racingPulse 2s infinite;
+}
+
+.racing-reflection {
+    position: relative;
+    overflow: hidden;
+}
+
+.racing-reflection::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: reflection 2s ease infinite;
+    z-index: 2;
+}
+
+.racing-grid {
+    position: relative;
+}
+
+.racing-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.03) 50%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 50%, transparent 50%);
+    background-size: 40px 40px;
+    animation: racingGrid 2s linear infinite;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.glitch-text {
+    animation: glitch 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+.racing-border {
+    border: 1px solid var(--accent-color);
+    animation: racingBorder 2s ease-in-out infinite;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--accent-color);
+    width: 0;
+    animation: 
+        typewriter 4s steps(40) 1s forwards,
+        blink 1s step-end infinite;
+}
+
+.shape-rotate {
+    animation: shapeRotate 15s linear infinite;
+}
+
+.shape-move {
+    animation: shapeMove 8s ease-in-out infinite;
+}
+
+.float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+.delay-5 {
+    animation-delay: 0.5s;
+}
+
+.delay-6 {
+    animation-delay: 0.6s;
+}
+
+.delay-7 {
+    animation-delay: 0.7s;
+}
+
+.delay-8 {
+    animation-delay: 0.8s;
+}
+
+.delay-9 {
+    animation-delay: 0.9s;
+}
+
+.delay-10 {
+    animation-delay: 1s;
+}
+
+/* Animation durations */
+.duration-1 {
+    animation-duration: 0.5s;
+}
+
+.duration-2 {
+    animation-duration: 0.75s;
+}
+
+.duration-3 {
+    animation-duration: 1s;
+}
+
+.duration-4 {
+    animation-duration: 1.25s;
+}
+
+.duration-5 {
+    animation-duration: 1.5s;
+}
+
+/* Animation for elements when they enter viewport */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animate-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animate-on-scroll.animate-slide-left {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.animate-on-scroll.animate-slide-right {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.animate-on-scroll.animate-scale {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translate(0) scale(1);
+} 
